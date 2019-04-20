@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Helper utilities and decorators."""
-from flask import current_app, flash, g, request
+from flask import current_app, flash, request
 
 from comhina.extensions import babel
 
@@ -14,4 +14,5 @@ def flash_errors(form, category="warning"):
 
 @babel.localeselector
 def get_locale():
+    """Retrieve the users locale from the request."""
     return request.accept_languages.best_match(current_app.config["LANGUAGES"])

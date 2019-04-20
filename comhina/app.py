@@ -33,6 +33,7 @@ def create_app(config_object="comhina.settings"):
 
     @app.before_request
     def before_request():
+        """Set the Flask context locale to the Babel locale."""
         g.locale = str(flask_babel_get_locale())
 
     return app
@@ -61,7 +62,7 @@ def register_blueprints(app):
 
 
 def register_errorhandlers(app):
-    """Register error handlers."""
+    """Register error handlers."""  # noqa: D202
 
     def render_error(error):
         """Render error template."""
@@ -75,7 +76,7 @@ def register_errorhandlers(app):
 
 
 def register_shellcontext(app):
-    """Register shell context objects."""
+    """Register shell context objects."""  # noqa: D202
 
     def shell_context():
         """Shell context objects."""
