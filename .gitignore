@@ -57,3 +57,6 @@ env/
 
 # Development database
 *.db
+
+# Pytest
+.pytest_cache/*
