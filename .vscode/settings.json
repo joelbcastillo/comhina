@@ -1,4 +1,5 @@
 {
     "python.pythonPath": "/Users/jocastillo/.local/share/virtualenvs/comhina-_bv6qfCg/bin/python",
-    "python.linting.pylintEnabled": true
+    "python.linting.pylintEnabled": true,
+    "python.formatting.provider": "black"
 }
