@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 """The app module, containing the app factory function."""
-from flask import Flask, render_template
+from flask import Flask, g, render_template
+from flask_babel import get_locale as flask_babel_get_locale
 
 from comhina import commands, public, user
 from comhina.extensions import (
+    babel,
     bcrypt,
     cache,
     csrf_protect,
@@ -11,6 +13,7 @@ from comhina.extensions import (
     debug_toolbar,
     login_manager,
     migrate,
+    moment,
     webpack,
 )
 
@@ -27,11 +30,17 @@ def create_app(config_object="comhina.settings"):
     register_errorhandlers(app)
     register_shellcontext(app)
     register_commands(app)
+
+    @app.before_request
+    def before_request():
+        g.locale = str(flask_babel_get_locale())
+
     return app
 
 
 def register_extensions(app):
     """Register Flask extensions."""
+    babel.init_app(app)
     bcrypt.init_app(app)
     cache.init_app(app)
     db.init_app(app)
@@ -39,6 +48,7 @@ def register_extensions(app):
     login_manager.init_app(app)
     debug_toolbar.init_app(app)
     migrate.init_app(app, db)
+    moment.init_app(app)
     webpack.init_app(app)
     return None
 
@@ -80,3 +90,4 @@ def register_commands(app):
     app.cli.add_command(commands.lint)
     app.cli.add_command(commands.clean)
     app.cli.add_command(commands.urls)
+    app.cli.add_command(commands.translate)

@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "89dbac321f5dfdeeda83c6ecbc8705cc574572a11d94ce6cb53f9143827a84f5"
+            "sha256": "915ad9e9962f7a5368233a9dfba6304ded539f47d55124eee7ef49f92aa38340"
         },
         "pipfile-spec": 6,
         "requires": {},
@@ -19,6 +19,13 @@
                 "sha256:40b9a619aa5f25ea1e1508adcda88b33704ef28e02c9cfa6471e5c772ecf0829"
             ],
             "version": "==1.0.9"
+        },
+        "babel": {
+            "hashes": [
+                "sha256:6778d85147d5d85345c14a26aada5e478ab04e39b078b0745ee6870c2b5cf669",
+                "sha256:8cba50f48c529ca3fa18cf81fa9403be176d374ac4d60738b839122dfaaa3d23"
+            ],
+            "version": "==2.6.0"
         },
         "bcrypt": {
             "hashes": [
@@ -107,6 +114,13 @@
             "index": "pypi",
             "version": "==1.0.2"
         },
+        "flask-babel": {
+            "hashes": [
+                "sha256:316ad183e42003f3922957fa643d0a1e8e34a0f0301a88c3a8f605bc37ba5c86"
+            ],
+            "index": "pypi",
+            "version": "==0.12.2"
+        },
         "flask-bcrypt": {
             "hashes": [
                 "sha256:d71c8585b2ee1c62024392ebdbc447438564e2c8c02b4e57b56a4cafd8d13c5f"
@@ -144,6 +158,14 @@
             ],
             "index": "pypi",
             "version": "==2.4.0"
+        },
+        "flask-moment": {
+            "hashes": [
+                "sha256:5ff8a73487e2e11913718b6a972814a130b4aa454198195b2004b71b3a2c07b7",
+                "sha256:8379acdc9cda1227573ae52aac2e5b4b391e77ed300c70d49b0a929d0aa76680"
+            ],
+            "index": "pypi",
+            "version": "==0.7.0"
         },
         "flask-sqlalchemy": {
             "hashes": [
@@ -300,6 +322,13 @@
                 "sha256:5f98b069316ea1c2ed3f67e7f5df6c0d8f10b689964a4a811ff64f0106819ec8"
             ],
             "version": "==1.0.4"
+        },
+        "pytz": {
+            "hashes": [
+                "sha256:303879e36b721603cc54604edcac9d20401bdbe31e1e4fdee5b9f98d5d31dfda",
+                "sha256:d747dd3d23d77ef44c6a3526e274af6efeb0a6f1afd5a69ba4d5be4098c8e141"
+            ],
+            "version": "==2019.1"
         },
         "six": {
             "hashes": [

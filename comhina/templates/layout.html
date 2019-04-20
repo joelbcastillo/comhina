@@ -7,10 +7,12 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
+  <link rel="icon" href="{{ asset_url_for('img/comhina_icon.png') }}" type="image/x-icon"/>
+  <link rel="shortcut icon" href="{{ asset_url_for('img/comhina_icon.png') }}" type="image/x-icon"/>
 
   <title>{% block page_title %}
   
-    COMHINA
+    {{ _('COMHINA | A bridge to the unreached') }}
   
     {% endblock %}
   </title>
@@ -57,7 +59,10 @@
 
 <!-- JavaScript at the bottom for fast page loading -->
 {{ javascript_tag('main_js') | safe }}
-{% block js %}{% endblock %}
+{% block js %}
+  {{ moment.include_moment() }}
+  {{ moment.lang(g.locale) }}
+{% endblock %}
 <!-- end scripts -->
 {% endblock %}
 </body>
