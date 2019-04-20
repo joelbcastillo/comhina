@@ -60,3 +60,6 @@ env/
 
 # Pytest
 .pytest_cache/*
+
+# Flask-Babel
+*.pot
