@@ -3,7 +3,6 @@ language: python
 env:
 - FLASK_APP=comhina.py FLASK_DEBUG=1
 python:
-  - 2.7
   - 3.4
   - 3.5
   - 3.6
