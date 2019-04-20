@@ -1,14 +1,15 @@
 <footer>
-  <small>
-  <ul class="company">
-    <li>© Joel Castillo</li>
-  </ul>
-
-    <ul class="footer-nav">
-
-      <li><a href="{{ url_for('public.about') }}">About</a></li>
-
-      <li><a href="mailto:joelbcastillo@gmail.com">Contact</a></li>
-    </ul>
-  </small>
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-lg-auto">
+        {{ _("COMHINA International") }}
+      </div>
+      <div class="col-lg-auto">
+        {{ _("E-mail") }}: <a href="mailto:info@comhina.us">info@comhina.us</a>
+      </div>
+      <div class="col-lg-auto">
+        {{ _("Phone") }}: <a href="tel:+1 305-677-0177">+1 305-677-0177</a>
+      </div>
+    </div>
+  </div><!-- /.row -->
 </footer>

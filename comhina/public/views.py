@@ -1,6 +1,16 @@
 # -*- coding: utf-8 -*-
 """Public section, including homepage and signup."""
-from flask import Blueprint, flash, redirect, render_template, request, url_for
+from flask import (
+    Blueprint,
+    current_app,
+    flash,
+    g,
+    redirect,
+    render_template,
+    request,
+    url_for,
+)
+from flask_babel import get_locale as flask_babel_get_locale
 from flask_login import login_required, login_user, logout_user
 
 from comhina.extensions import login_manager
@@ -61,8 +71,22 @@ def register():
     return render_template("public/register.html", form=form)
 
 
-@blueprint.route("/about/")
-def about():
+@blueprint.route("/regions/")
+def regions():
+    """About page."""
+    form = LoginForm(request.form)
+    return render_template("public/about.html", form=form)
+
+
+@blueprint.route("/join_us/")
+def join_us():
+    """About page."""
+    form = LoginForm(request.form)
+    return render_template("public/about.html", form=form)
+
+
+@blueprint.route("/contact/")
+def contact():
     """About page."""
     form = LoginForm(request.form)
     return render_template("public/about.html", form=form)

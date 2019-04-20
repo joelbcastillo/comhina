@@ -142,7 +142,11 @@ def update():
     """Update all languages."""
     if os.system("pybabel extract -F babel.cfg -k _l -o messages.pot ."):
         raise RuntimeError("extract command failed")
-    if os.system("pybabel update -i messages.pot -d app/translations"):
+    if os.system(
+        "pybabel update -i messages.pot -d {app_path}/translations".format(
+            app_path=HERE
+        )
+    ):
         raise RuntimeError("update command failed")
     os.remove("messages.pot")
 
@@ -150,7 +154,7 @@ def update():
 @translate.command()
 def compile():
     """Compile all languages."""
-    if os.system("pybabel compile -d app/translations"):
+    if os.system("pybabel compile -d {app_path}/translations".format(app_path=HERE)):
         raise RuntimeError("compile command failed")
 
 
@@ -160,6 +164,10 @@ def init(lang):
     """Initialize a new language."""
     if os.system("pybabel extract -F babel.cfg -k _l -o messages.pot ."):
         raise RuntimeError("extract command failed")
-    if os.system("pybabel init -i messages.pot -d app/translations -l " + lang):
+    if os.system(
+        "pybabel init -i messages.pot -d {app_path}/translations -l {lang}".format(
+            app_path=HERE, lang=lang
+        )
+    ):
         raise RuntimeError("init command failed")
     os.remove("messages.pot")

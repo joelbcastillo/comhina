@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-04-20 03:08-0400\n"
-"PO-Revision-Date: 2019-04-20 03:08-0400\n"
+"POT-Creation-Date: 2019-04-20 15:16-0400\n"
+"PO-Revision-Date: 2019-04-20 14:55-0400\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
 "Language-Team: es <LL@li.org>\n"
@@ -18,7 +18,50 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
 
+#: comhina/templates/footer.html:5
+msgid "COMHINA International"
+msgstr ""
+
+#: comhina/templates/footer.html:8
+msgid "E-mail"
+msgstr ""
+
+#: comhina/templates/footer.html:11
+msgid "Phone"
+msgstr ""
+
 #: comhina/templates/layout.html:15
 msgid "COMHINA | A bridge to the unreached"
-msgstr "COMHINA | Un puenta a los no alcanzados"
+msgstr "COMHINA | Un puente a los no alcanzados"
+
+#: comhina/templates/nav.html:14
+msgid "Home"
+msgstr "Inicio"
+
+#: comhina/templates/nav.html:15
+msgid "(current)"
+msgstr "(pagina actual)"
+
+#: comhina/templates/nav.html:19
+msgid "Regions"
+msgstr "Regionales"
+
+#: comhina/templates/nav.html:22
+msgid "Join"
+msgstr "Unete"
+
+#: comhina/templates/nav.html:25
+msgid "Contact"
+msgstr "Contactenos"
+
+#: comhina/templates/nav.html:31
+msgid "Logged in as"
+msgstr "Conectado como"
+
+#: comhina/templates/public/home.html:8
+msgid "Welcome to COMHINA"
+msgstr "Bienvenidos a COMHINA"
+
+#~ msgid "About"
+#~ msgstr "Quienes Somos"
 

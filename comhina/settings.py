@@ -22,3 +22,4 @@ CACHE_TYPE = "simple"  # Can be "memcached", "redis", etc.
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 WEBPACK_MANIFEST_PATH = "webpack/manifest.json"
 LANGUAGES = ["en", "es"]
+DEFAULT_LOCALE = "en"

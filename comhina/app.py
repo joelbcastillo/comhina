@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """The app module, containing the app factory function."""
-from flask import Flask, g, render_template
-from flask_babel import get_locale as flask_babel_get_locale
+from flask import abort, Flask, g, request, render_template
 
 from comhina import commands, public, user
 from comhina.extensions import (
@@ -31,10 +30,23 @@ def create_app(config_object="comhina.settings"):
     register_shellcontext(app)
     register_commands(app)
 
+    @app.url_defaults
+    def set_language_code(endpoint, values):
+        if "lang_code" in values or not g.get("lang_code", None):
+            return
+        if app.url_map.is_endpoint_expecting(endpoint, "lang_code"):
+            values["lang_code"] = g.lang_code
+
+    @app.url_value_preprocessor
+    def get_lang_code(endpoint, values):
+        if values is not None:
+            g.lang_code = values.pop("lang_code", None)
+
     @app.before_request
-    def before_request():
-        """Set the Flask context locale to the Babel locale."""
-        g.locale = str(flask_babel_get_locale())
+    def ensure_lang_support():
+        lang_code = g.get("lang_code", None)
+        if lang_code and lang_code not in app.config["LANGUAGES"]:
+            return abort(404)
 
     return app
 
@@ -57,7 +69,9 @@ def register_extensions(app):
 def register_blueprints(app):
     """Register Flask blueprints."""
     app.register_blueprint(public.views.blueprint)
+    app.register_blueprint(public.views.blueprint, url_prefix="/<lang_code>/")
     app.register_blueprint(user.views.blueprint)
+    app.register_blueprint(user.views.blueprint, url_prefix="/<lang_code>/user")
     return None
 
 
